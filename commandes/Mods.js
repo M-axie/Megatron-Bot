@@ -48,7 +48,7 @@ var {
                     })
 fs.unlinkSync(medis)
 
-                    repondre(" Profile Picture Updated")
+                    repondre("Your Profile Picture Updated")
                 })
 
 
@@ -276,7 +276,7 @@ await zk.groupParticipantsUpdate(
     await sleep(500)
 
   }  
-} catch (e) {repondre("I need admin priveleges")} } else {
+} catch (e) {repondre("I need administration rights")} } else {
   repondre("Order reserved for the group owner for security reasons"); return
 }
 });
@@ -400,7 +400,7 @@ if(!verifGroupe) {repondre('order reservation for groups' ) ; return };
 
 
 
-          if(groupalreadyBan) {repondre('This group is already in only admin mode') ; return}
+          if(groupalreadyBan) {repondre('This group is already in onlyadmin mode') ; return}
 
           addGroupToOnlyAdminList(dest)
 
@@ -413,7 +413,7 @@ if(!verifGroupe) {repondre('order reservation for groups' ) ; return };
 
   } else {
 
-    repondre('This group is not in only admin mode.');
+    repondre('This group is not in onlyadmin mode.');
   }
   break;
 
