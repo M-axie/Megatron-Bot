@@ -64,7 +64,7 @@ zokou({ nomCom: "tagall", categorie: 'Group', reaction: "📣" }, async (dest, z
 
 zokou({ nomCom: "invite", categorie: 'Group', reaction: "🙋" }, async (dest, zk, commandeOptions) => {
   const { repondre, nomGroupe, nomAuteurMessage, verifGroupe } = commandeOptions;
-  if (!verifGroupe) { repondre("wait bro , you want the link to my dm?"); return; };
+  if (!verifGroupe) { repondre("wait comrade , you want the link to my dm?"); return; };
 
 
   var link = await zk.groupInviteCode(dest)
@@ -265,9 +265,9 @@ zokou({ nomCom: "remove", categorie: 'Group', reaction: "👨🏿‍💼" }, asy
               await zk.groupParticipantsUpdate(dest, [auteurMsgRepondu], "remove");
               zk.sendMessage(dest, { text: txt, mentions: [auteurMsgRepondu] })
 
-            } else { repondre("This member cannot be removed because he is an administrator of the group.") }
+            } else { repondre("Bot cannot remove group admin.") }
 
-          } else { return repondre("This user is not part of the group."); }
+          } else { return repondre("This user is not a member of the group."); }
         }
         else { return repondre("I am not an admin of this group.") }
 
@@ -360,10 +360,10 @@ zokou({ nomCom: "del", categorie: 'Group',reaction:"🧹" }, async (dest, zk, co
          
          await zk.sendMessage(dest,{delete:key});return;
 
-             }catch(e){repondre( "I need admin rights.")}
+             }catch(e){repondre( "I need admin privileges.")}
                     
                       
-               }else{repondre("Sorry, you are not an administrator of the group.")}
+               }else{repondre("command is for group admins.")}
           }
 
 });
@@ -411,7 +411,7 @@ zokou({ nomCom: "info", categorie: 'Group' }, async (dest, zk, commandeOptions) 
       if(arg[0] === 'on') {
 
       
-       if(enetatoui ) { repondre("the antilink is already activated for this group")
+       if(enetatoui ) { repondre(" antilink has been  activated for this group")
                     } else {
                   await ajouterOuMettreAJourJid(dest,"oui");
                 
@@ -746,13 +746,13 @@ zokou({ nomCom: "apk", reaction: "✨", categorie: "Recherche" }, async (dest, z
   try {
     const appName = arg.join(' ');
     if (!appName) {
-      return repondre("*Enter the name of the application to search for*");
+      return repondre("*Enter the name of the app to search for*");
     }
 
     const searchResults = await search(appName);
 
     if (searchResults.length === 0) {
-      return repondre("*can't find application, please enter another name*");
+      return repondre("*can't find app, please enter another name*");
     }
 
     const appData = await download(searchResults[0].id);
@@ -984,7 +984,7 @@ zokou({
       }
 
   } else {
-    repondre('Sorry, you are not an admin of this group')
+    repondre(' you are not an admin of this group')
   }
 
 
